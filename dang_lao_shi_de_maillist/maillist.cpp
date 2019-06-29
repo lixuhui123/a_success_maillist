@@ -3,6 +3,7 @@
 #include<string.h>
 #include<assert.h>
 #include "maillist.h"
+//func.c
 void menu()
 {
 	printf("******************************\n");

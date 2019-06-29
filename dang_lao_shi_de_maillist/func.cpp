@@ -216,18 +216,7 @@ void SearchInfo(MailList* ml,char* find)
 		} while (0);//goto的解决方案do while(0)
 		if (flag)
 		{
-			/*printf("%15s %5s %3s %10s %12s", "姓名", "性别", "年龄", "电话", "住址\n");
-			printf("%15s", ml->data[i].name);
-			printf("%5s", ml->data[i].sex);
-			printf("%3d", ml->data[i].age);
-			printf("%10s", ml->data[i].tel);
-			printf("%12s\n", ml->data[i].addr);*/
-			/*FILE *fp = fopen("F:\\bite learn\\SavaSearchData.txt", "wb");
-			fwrite(&ml->data[i], sizeof(Student), 1, fp);
-			FILE *rp = fopen("F:\\bite learn\\SavaSearchData.txt", "rb");
-			fread(save, sizeof(Student), 1, rp);
-			fclose(fp);
-			fp = NULL;*/
+			 
 			save[j] = i;
 			++j;
 		}
@@ -254,9 +243,21 @@ void DelInfo(MailList* ml)
 	printf("请输入要删除的信息\n");
 	scanf("%s", &del);
 	SearchInfo(ml, del);
+	while (1)
+	{
+		printf("请选择删除的联系人编号\n");
+		scanf("%d", &bianhao);
+		if (bianhao > ml->size)
+		{
+			printf("请重新输入\n");
+		}
+		else
+		{
+			break;
+		}
 
-	printf("请选择删除的联系人编号\n");
-	scanf("%d", &bianhao);
+	}
+	
     for (i=bianhao;i<ml->size;++i)
     {
     	ml->data[i] = ml->data[i+1];
